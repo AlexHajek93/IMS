@@ -1,4 +1,4 @@
-package org.revature.IMS;
+package org.ims.IMS_WEB;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
