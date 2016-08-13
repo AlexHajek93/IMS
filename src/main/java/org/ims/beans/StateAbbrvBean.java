@@ -52,5 +52,4 @@ public class StateAbbrvBean {
 		this.stateAbbrv = stateAbbrv;
 		this.stateAddressSet = stateAddressSet;
 	}
-	
 }

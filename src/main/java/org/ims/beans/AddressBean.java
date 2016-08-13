@@ -74,6 +74,5 @@ public class AddressBean {
 		this.stateId = stateId;
 		this.addressZip = addressZip;
 		this.stateAbbrv = stateAbbrv;
-	}
-	
+	}	
 }
