@@ -13,7 +13,7 @@ public class ClientTypeBean {
 	@Column(name="CLIENT_TYPE_ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int clientTypeId;
-	@Column(name="client_Type")
+	@Column(name="CLIENT_TYPE")
 	private String clientType;
 	
 	@OneToMany(mappedBy="clientTypeId")
