@@ -36,11 +36,10 @@ public class ProductBean {
 					joinColumns=@JoinColumn(name="PRODUCT_UPC"),
 					inverseJoinColumns=@JoinColumn(name="CATEGORY_ID"))
 	private Set<ProductCategoryBean> categoriesForProduct;
-<<<<<<< HEAD
+
 	@OneToMany(mappedBy="product")
 	private Set<POLineBean> linesForProduct;
-=======
->>>>>>> master
+
 	
 	public int getProductUPC() {
 		return productUPC;
@@ -108,26 +107,21 @@ public class ProductBean {
 	public void setCategoriesForProduct(Set<ProductCategoryBean> categoriesForProduct) {
 		this.categoriesForProduct = categoriesForProduct;
 	}
-<<<<<<< HEAD
+
 	public Set<POLineBean> getLinesForProduct() {
 		return linesForProduct;
 	}
 	public void setLinesForProduct(Set<POLineBean> linesForProduct) {
 		this.linesForProduct = linesForProduct;
 	}
-=======
->>>>>>> master
+
 	public ProductBean() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public ProductBean(int productUPC, String productName, String productDescription, String shortName, int unitCost,
 			String packSize, int reorderQuantity, int retailPrice, int productWeight, Blob productImage,
-<<<<<<< HEAD
 			Set<ProductCategoryBean> categoriesForProduct, Set<POLineBean> linesForProduct) {
-=======
-			Set<ProductCategoryBean> categoriesForProduct) {
->>>>>>> master
 		super();
 		this.productUPC = productUPC;
 		this.productName = productName;
@@ -140,11 +134,6 @@ public class ProductBean {
 		this.productWeight = productWeight;
 		this.productImage = productImage;
 		this.categoriesForProduct = categoriesForProduct;
-<<<<<<< HEAD
 		this.linesForProduct = linesForProduct;
 	}
 }
-=======
-	}	
-}
->>>>>>> master
