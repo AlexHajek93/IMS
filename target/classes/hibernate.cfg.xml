@@ -29,11 +29,15 @@
 			true
 		</property>
 		<!-- ORM resources -->
-<!-- 		<mapping resource="Employee.hbm.xml"/> -->
-<!-- 		<mapping class="com.revature.beans.Classroom"/> -->
-<!-- 		<mapping class="com.revature.beans.Course"/> -->
-<!-- 		<mapping class="com.revature.beans.Student"/> -->
-<!-- 		<mapping class="com.revature.beans.Teacher"/> -->
-<!-- 		<mapping class="com.revature.beans.Textbook"/> -->
+		<mapping resource="Employee.hbm.xml"/>
+		<mapping class="org.ims.beans.AddressBean"/>
+		<mapping class="org.ims.beans.ClientBean"/>
+		<mapping class="org.ims.beans.ClientTypeBean"/>
+		<mapping class="org.ims.beans.POLineBean"/>
+		<mapping class="org.ims.beans.POLineComposite"/>
+		<mapping class="org.ims.beans.ProductBean"/>
+		<mapping class="org.ims.beans.ProductCategoryBean"/>
+		<mapping class="org.ims.beans.PurchaseOrderBean"/>
+		<mapping class="org.ims.beans.StateAbbrvBean"/>
 	</session-factory>
 </hibernate-configuration>
