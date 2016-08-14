@@ -20,7 +20,7 @@ public class ProductBean {
 	@Column(name="SHORT_NAME")
 	private String shortName;
 	@Column(name="UNIT_COST")
-	private int unitCost;
+	private double unitCost;
 	@Column(name="PACK_SIZE")
 	private String packSize;
 	@Column(name="REORDER_QUANTITY")
@@ -65,7 +65,7 @@ public class ProductBean {
 	public void setShortName(String shortName) {
 		this.shortName = shortName;
 	}
-	public int getUnitCost() {
+	public double getUnitCost() {
 		return unitCost;
 	}
 	public void setUnitCost(int unitCost) {
@@ -119,7 +119,7 @@ public class ProductBean {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ProductBean(int productUPC, String productName, String productDescription, String shortName, int unitCost,
+	public ProductBean(int productUPC, String productName, String productDescription, String shortName, double unitCost,
 			String packSize, int reorderQuantity, int retailPrice, int productWeight, Blob productImage,
 			Set<ProductCategoryBean> categoriesForProduct, Set<POLineBean> linesForProduct) {
 		super();

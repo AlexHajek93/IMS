@@ -1,6 +1,16 @@
 package org.ims.beans;
 
-import javax.persistence.*;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="IMS_PURCHASE_ORDER")
@@ -20,6 +30,9 @@ public class PurchaseOrderBean {
 	@ManyToOne
 	@JoinColumn(name="CLIENT_ID")
 	private ClientBean client;
+	@OneToMany(mappedBy="order")
+	private Set<POLineBean> orderLines;
+
 	public int getOrderNum() {
 		return orderNum;
 	}
@@ -59,8 +72,14 @@ public class PurchaseOrderBean {
 	public PurchaseOrderBean() {
 		super();
 	}
+	public Set<POLineBean> getOrderLines() {
+		return orderLines;
+	}
+	public void setOrderLines(Set<POLineBean> orderLines) {
+		this.orderLines = orderLines;
+	}
 	public PurchaseOrderBean(int orderNum, String subtotal, String purchaseDate, String taxAmount, int poTotal,
-	    ClientBean client) {
+			ClientBean client, Set<POLineBean> orderLines) {
 		super();
 		this.orderNum = orderNum;
 		this.subtotal = subtotal;
@@ -68,5 +87,6 @@ public class PurchaseOrderBean {
 		this.taxAmount = taxAmount;
 		this.poTotal = poTotal;
 		this.client = client;
+		this.orderLines = orderLines;
 	}
 }
