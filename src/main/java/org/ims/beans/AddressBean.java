@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class AddressBean {
 	
 	@Id
-	@Column(name="ABBRV_ID")
+	@Column(name="ADDRESS_ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int addressId;
 	@Column(name="STREET_ADDRESS_1")

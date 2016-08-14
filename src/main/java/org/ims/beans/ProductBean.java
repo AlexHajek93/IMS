@@ -36,8 +36,10 @@ public class ProductBean {
 					joinColumns=@JoinColumn(name="PRODUCT_UPC"),
 					inverseJoinColumns=@JoinColumn(name="CATEGORY_ID"))
 	private Set<ProductCategoryBean> categoriesForProduct;
+
 	@OneToMany(mappedBy="product")
 	private Set<POLineBean> linesForProduct;
+
 	
 	public int getProductUPC() {
 		return productUPC;
@@ -105,12 +107,14 @@ public class ProductBean {
 	public void setCategoriesForProduct(Set<ProductCategoryBean> categoriesForProduct) {
 		this.categoriesForProduct = categoriesForProduct;
 	}
+
 	public Set<POLineBean> getLinesForProduct() {
 		return linesForProduct;
 	}
 	public void setLinesForProduct(Set<POLineBean> linesForProduct) {
 		this.linesForProduct = linesForProduct;
 	}
+
 	public ProductBean() {
 		super();
 		// TODO Auto-generated constructor stub
