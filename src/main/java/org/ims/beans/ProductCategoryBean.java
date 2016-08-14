@@ -2,6 +2,7 @@ package org.ims.beans;
 
 import java.util.Set;
 
+<<<<<<< HEAD
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+=======
+import javax.persistence.*;
+>>>>>>> master
 
 @Entity
 @Table(name="IMS_PRODUCT_CATEGORY")
@@ -57,4 +61,8 @@ public class ProductCategoryBean {
 		this.categoryDescription = categoryDescription;
 		this.productsForCategory = productsForCategory;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
