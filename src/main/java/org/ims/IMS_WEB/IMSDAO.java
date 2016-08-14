@@ -64,7 +64,6 @@ public class IMSDAO {
   	return false;
   }
   public boolean delete(Object obj){
-  	return false;
-  	
+  	return true;
   }
 }
