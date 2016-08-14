@@ -16,12 +16,10 @@ public class AddressBean {
 	private String streetAddress2;
 	@Column(name="ADDRESS_CITY")
 	private String addressCity;
-	@Column(name="STATE_ID")
-	private int stateId;
 	@Column(name="ADDRESS_ZIP")
 	private String addressZip;
 	@ManyToOne
-	@JoinColumn(name="ADDRESS_STATE_ABBRV")
+	@JoinColumn(name="STATE_ID")
 	private StateAbbrvBean stateAbbrv;
 	
 	public int getAddressId() {
@@ -48,12 +46,6 @@ public class AddressBean {
 	public void setAddressCity(String addressCity) {
 		this.addressCity = addressCity;
 	}
-	public int getStateId() {
-		return stateId;
-	}
-	public void setStateId(int stateId) {
-		this.stateId = stateId;
-	}
 	public String getAddressZip() {
 		return addressZip;
 	}
@@ -64,14 +56,13 @@ public class AddressBean {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public AddressBean(int addressId, String streetAddress1, String streetAddress2, String addressCity, int stateId,
+	public AddressBean(int addressId, String streetAddress1, String streetAddress2, String addressCity,
 			String addressZip, StateAbbrvBean stateAbbrv) {
 		super();
 		this.addressId = addressId;
 		this.streetAddress1 = streetAddress1;
 		this.streetAddress2 = streetAddress2;
 		this.addressCity = addressCity;
-		this.stateId = stateId;
 		this.addressZip = addressZip;
 		this.stateAbbrv = stateAbbrv;
 	}	

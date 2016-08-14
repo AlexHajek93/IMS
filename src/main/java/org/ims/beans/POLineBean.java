@@ -6,16 +6,15 @@ import javax.persistence.*;
 @Table(name="IMS_PO_LINE")
 public class POLineBean {
 	
-	@EmbeddedId
+	@EmbeddedId		//composite key
 	private POLineComposite compositeKey;
 	@Column(name="UNIT_PRICE")
 	private double unitPrice;
 	@Column(name="QUANTITY_ORDERED")
 	private int quantityOrdered;
-	@Column(name="PRODUCT_UPC")
-	private int productUPC;
+
 	@ManyToOne
-	@JoinColumn(name="LINE_PRODUCT")
+	@JoinColumn(name="PRODUCT_UPC")
 	private ProductBean product;
 	
 	public POLineComposite getCompositeKey() {
@@ -36,13 +35,6 @@ public class POLineBean {
 	public void setQuantityOrdered(int quantityOrdered) {
 		this.quantityOrdered = quantityOrdered;
 	}
-	public int getProductUPC() {
-		return productUPC;
-	}
-	public void setProductUPC(int productUPC) {
-		this.productUPC = productUPC;
-	}
-	
 	public ProductBean getProduct() {
 		return product;
 	}
@@ -53,13 +45,12 @@ public class POLineBean {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public POLineBean(POLineComposite compositeKey, double unitPrice, int quantityOrdered, int productUPC,
+	public POLineBean(POLineComposite compositeKey, double unitPrice, int quantityOrdered, 
 			ProductBean product) {
 		super();
 		this.compositeKey = compositeKey;
 		this.unitPrice = unitPrice;
 		this.quantityOrdered = quantityOrdered;
-		this.productUPC = productUPC;
 		this.product = product;
 	}
 	
