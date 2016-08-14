@@ -5,7 +5,7 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table(name="CLIENT")
+@Table(name="IMS_CLIENT")
 public class ClientBean {
 	@Id
 	@Column(name="CLIENT_ID")
