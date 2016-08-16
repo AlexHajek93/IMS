@@ -16,19 +16,19 @@ import javax.persistence.Table;
 @Table(name="IMS_PURCHASE_ORDER")
 public class PurchaseOrderBean {
 	@Id
-	@Column(name="ORDER_NUMBER")
+	@Column(name="ORDER_NUMBER",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int orderNum;
-	@Column(name="SUBTOTAL")
+	@Column(name="SUBTOTAL",nullable=false)
 	private String subtotal;
-	@Column(name="PURCHASE_DATE")
+	@Column(name="PURCHASE_DATE",nullable=false)
 	private String purchaseDate;
-	@Column(name="TAX_AMOUNT")
+	@Column(name="TAX_AMOUNT",nullable=false)
 	private String taxAmount;
-	@Column(name="PO_TOTAL")
+	@Column(name="PO_TOTAL",nullable=false)
 	private int poTotal;
 	@ManyToOne
-	@JoinColumn(name="CLIENT_ID")
+	@JoinColumn(name="CLIENT_ID",nullable=false)
 	private ClientBean client;
 	@OneToMany(mappedBy="order")
 	private Set<POLineBean> orderLines;

@@ -10,14 +10,14 @@ import javax.persistence.*;
 public class StateAbbrvBean {
 	
 	@Id
-	@Column(name="ABBRV_ID")
+	@Column(name="ABBRV_ID",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int arrvId;
 	
-	@Column(name="STATE_NAME")
+	@Column(name="STATE_NAME",nullable=false)
 	private String stateName;
 	
-	@Column(name="STATE_ABBRV")
+	@Column(name="STATE_ABBRV",nullable=false)
 	private String stateAbbrv;
 	
 	@OneToMany(mappedBy="stateAbbrv")

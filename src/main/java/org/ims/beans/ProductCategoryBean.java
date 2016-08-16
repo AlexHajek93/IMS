@@ -10,10 +10,10 @@ import javax.persistence.*;
 public class ProductCategoryBean {
 
 	@Id
-	@Column(name="CATEGORY_ID")
+	@Column(name="CATEGORY_ID",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int categoryId;
-	@Column(name="CATEGROY_DESCRIPTION")
+	@Column(name="CATEGROY_DESCRIPTION",nullable=false)
 	private String categoryDescription;
 	
 	@ManyToMany
