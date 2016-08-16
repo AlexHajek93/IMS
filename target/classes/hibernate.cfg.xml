@@ -29,7 +29,6 @@
 			true
 		</property>
 		<!-- ORM resources -->
-		<mapping resource="Employee.hbm.xml"/>
 		<mapping class="org.ims.beans.AddressBean"/>
 		<mapping class="org.ims.beans.ClientBean"/>
 		<mapping class="org.ims.beans.ClientTypeBean"/>
