@@ -10,22 +10,22 @@ import javax.persistence.*;
 public class ProductBean {
 	
 	@Id
-	@Column(name="PRODUCT_UPC")
+	@Column(name="PRODUCT_UPC",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int productUPC;
-	@Column(name="PRODUCT_NAME")
+	@Column(name="PRODUCT_NAME",nullable=false)
 	private String productName;
-	@Column(name="PRODUCT_DESCRIPTION")
+	@Column(name="PRODUCT_DESCRIPTION",nullable=false)
 	private String productDescription;
-	@Column(name="SHORT_NAME")
+	@Column(name="SHORT_NAME",nullable=false)
 	private String shortName;
-	@Column(name="UNIT_COST")
+	@Column(name="UNIT_COST",nullable=false)
 	private double unitCost;
-	@Column(name="PACK_SIZE")
+	@Column(name="PACK_SIZE",nullable=false)
 	private String packSize;
-	@Column(name="REORDER_QUANTITY")
+	@Column(name="REORDER_QUANTITY",nullable=false)
 	private int reorderQuantity;
-	@Column(name="RETAIL_PRICE")
+	@Column(name="RETAIL_PRICE",nullable=false)
 	private int retailPrice;
 	@Column(name="PRODUCT_WEIGHT")
 	private int productWeight;

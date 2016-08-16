@@ -16,7 +16,7 @@ public class ClientTypeBean {
 	@Column(name="CLIENT_TYPE")
 	private String clientType;
 	
-	@OneToMany(mappedBy="clientTypeId")
+	@OneToMany(mappedBy="clientType")
 	private Set<ClientBean> ClientSet;
 
 	public int getClientTypeId() {
