@@ -8,17 +8,17 @@ public class POLineBean {
 	
 	@EmbeddedId		//composite key
 	private POLineComposite compositeKey;
-	@Column(name="UNIT_PRICE")
+	@Column(name="UNIT_PRICE", nullable=false)
 	private double unitPrice;
-	@Column(name="QUANTITY_ORDERED")
+	@Column(name="QUANTITY_ORDERED", nullable=false)
 	private int quantityOrdered;
 	
 	//mappings
 	@ManyToOne
-	@JoinColumn(name="PRODUCT_UPC")
+	@JoinColumn(name="PRODUCT_UPC", nullable=false)
 	private ProductBean product;
 	@ManyToOne
-	@JoinColumn(name="ORDER_NUMBER")
+	@JoinColumn(name="ORDER_NUMBER", nullable=false)
 	private PurchaseOrderBean order;
 	
 	public POLineComposite getCompositeKey() {
