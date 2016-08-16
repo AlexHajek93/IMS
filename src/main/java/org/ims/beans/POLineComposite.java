@@ -7,11 +7,10 @@ import javax.persistence.*;
 @Embeddable
 public class POLineComposite implements Serializable{
 	
-	@Column(name = "ORDER_NUMBER", nullable=false)
+	@Column(name = "ORDER_NUMBER_ID", nullable=false)
 	private int orderNumber;
-	@Column(name = "LINE_NUMBER", nullable=false)
+	@Column(name = "LINE_NUMBER_ID", nullable=false)
 	private int lineNumber;
-	
 	public int getOrderNumber() {
 		return orderNumber;
 	}
@@ -24,6 +23,4 @@ public class POLineComposite implements Serializable{
 	public void setLineNumber(int lineNumber) {
 		this.lineNumber = lineNumber;
 	}
-	
-	
 }
