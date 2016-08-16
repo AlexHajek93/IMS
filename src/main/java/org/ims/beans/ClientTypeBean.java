@@ -10,10 +10,10 @@ import javax.persistence.*;
 public class ClientTypeBean {
 	
 	@Id
-	@Column(name="CLIENT_TYPE_ID")
+	@Column(name="CLIENT_TYPE_ID", nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int clientTypeId;
-	@Column(name="CLIENT_TYPE")
+	@Column(name="CLIENT_TYPE", nullable=false)
 	private String clientType;
 	
 	@OneToMany(mappedBy="clientTypeId")

@@ -8,26 +8,26 @@ import javax.persistence.*;
 @Table(name="IMS_CLIENT")
 public class ClientBean {
 	@Id
-	@Column(name="CLIENT_ID")
+	@Column(name="CLIENT_ID", nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	@Column(name="CLIENT_NAME")
+	@Column(name="CLIENT_NAME", nullable=false)
 	private String name;
-	@Column(name="CLIENT_EMAIL")
+	@Column(name="CLIENT_EMAIL", nullable=false)
 	private String email;
-	@Column(name="POINT_OF_CONTACT_NAME")
+	@Column(name="POINT_OF_CONTACT_NAME", nullable=false)
 	private String pocn;
-	@Column(name="CLIENT_PHONE")
+	@Column(name="CLIENT_PHONE", nullable=false)
 	private String phone;
-	@Column(name="CLIENT_FAX")
+	@Column(name="CLIENT_FAX", nullable=false)
 	private String fax;
 	
 //Mappings
 	@OneToOne
-	@JoinColumn(name="ADDRESS_ID")
+	@JoinColumn(name="ADDRESS_ID", nullable=false)
 	private AddressBean address;
 	@ManyToOne
-	@JoinColumn(name="CLIENT_TYPE_ID")
+	@JoinColumn(name="CLIENT_TYPE_ID", nullable=false)
 	private ClientTypeBean clientType;
 	public int getId() {
 		return id;

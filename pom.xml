@@ -44,7 +44,7 @@
   </dependencies>
   
   <build>
-	<finalName>your-project</finalName>
+	<finalName>IMS</finalName>
 	<plugins>
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
