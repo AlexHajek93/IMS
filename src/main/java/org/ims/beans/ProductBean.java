@@ -4,6 +4,9 @@ import java.sql.Blob;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="IMS_PRODUCT")
@@ -12,22 +15,43 @@ public class ProductBean {
 	@Id
 	@Column(name="PRODUCT_UPC",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotNull(message="UPC is required")
+	@Min(value=0,message="Invalid UPC")
 	private int productUPC;
 	@Column(name="PRODUCT_NAME",nullable=false)
+	@NotNull(message="Name is required")
+	@Size(max=150,message="Too Long")
 	private String productName;
 	@Column(name="PRODUCT_DESCRIPTION",nullable=false)
+	@NotNull(message="Description is required")
+	@Size(max=150,message="Too Long")
 	private String productDescription;
 	@Column(name="SHORT_NAME",nullable=false)
+	@NotNull(message="Abbreviation is required")
+	@Size(max=5,message="Too Long")
 	private String shortName;
 	@Column(name="UNIT_COST",nullable=false)
+	@NotNull(message="Cost is required")
+	@Min(value=0,message="Invalid Price")
 	private double unitCost;
 	@Column(name="PACK_SIZE",nullable=false)
+	@NotNull(message="Size is required")
+	@Size(max=10,message="Too Long")
 	private String packSize;
 	@Column(name="REORDER_QUANTITY",nullable=false)
+	@NotNull(message="Reorder Minimum is required")
+	@Min(value=0,message="Invalid Quantity")
 	private int reorderQuantity;
 	@Column(name="RETAIL_PRICE",nullable=false)
+<<<<<<< HEAD
+	@NotNull(message="Price is required")
+	@Min(value=0,message="Invalid Price")
+	private int retailPrice;
+=======
 	private double retailPrice;
+>>>>>>> master
 	@Column(name="PRODUCT_WEIGHT")
+	@Min(value=0,message="Invalid Weight")
 	private int productWeight;
 	@Column(name="PRODUCT_IMAGE")
 	private Blob productImage;

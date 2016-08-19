@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="IMS_PURCHASE_ORDER")
@@ -19,8 +21,26 @@ public class PurchaseOrderBean {
 	@Id
 	@Column(name="ORDER_NUMBER",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotNull(message="Order Number is required")
+	@Min(value=0,message="Invalid Price")
 	private int orderNum;
 	@Column(name="SUBTOTAL",nullable=false)
+<<<<<<< HEAD
+	@NotNull(message="Subtotal is required")
+	@Min(value=0,message="Invalid Price")
+	private String subtotal;
+	@Column(name="PURCHASE_DATE",nullable=false)
+	@NotNull(message="Date is required")
+	private String purchaseDate;
+	@Column(name="TAX_AMOUNT",nullable=false)
+	@NotNull(message="Tax is required")
+	@Min(value=0,message="Invalid Price")
+	private String taxAmount;
+	@Column(name="PO_TOTAL",nullable=false)
+	@NotNull(message="Total is required")
+	@Min(value=0,message="Invalid Price")
+	private int poTotal;
+=======
 	private double subtotal;
 	@Column(name="PURCHASE_DATE",nullable=false)
 	private Date purchaseDate;
@@ -28,6 +48,7 @@ public class PurchaseOrderBean {
 	private double taxAmount;
 	@Column(name="PO_TOTAL",nullable=false)
 	private double poTotal;
+>>>>>>> master
 	@ManyToOne
 	@JoinColumn(name="CLIENT_ID",nullable=false)
 	private ClientBean client;
