@@ -25,30 +25,20 @@ public class PurchaseOrderBean {
 	@Min(value=0,message="Invalid Price")
 	private int orderNum;
 	@Column(name="SUBTOTAL",nullable=false)
-<<<<<<< HEAD
 	@NotNull(message="Subtotal is required")
 	@Min(value=0,message="Invalid Price")
-	private String subtotal;
+	private double subtotal;
 	@Column(name="PURCHASE_DATE",nullable=false)
 	@NotNull(message="Date is required")
-	private String purchaseDate;
+	private Date purchaseDate;
 	@Column(name="TAX_AMOUNT",nullable=false)
 	@NotNull(message="Tax is required")
 	@Min(value=0,message="Invalid Price")
-	private String taxAmount;
+	private double taxAmount;
 	@Column(name="PO_TOTAL",nullable=false)
 	@NotNull(message="Total is required")
 	@Min(value=0,message="Invalid Price")
-	private int poTotal;
-=======
-	private double subtotal;
-	@Column(name="PURCHASE_DATE",nullable=false)
-	private Date purchaseDate;
-	@Column(name="TAX_AMOUNT",nullable=false)
-	private double taxAmount;
-	@Column(name="PO_TOTAL",nullable=false)
 	private double poTotal;
->>>>>>> master
 	@ManyToOne
 	@JoinColumn(name="CLIENT_ID",nullable=false)
 	private ClientBean client;
