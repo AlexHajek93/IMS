@@ -3,6 +3,9 @@ package org.ims.beans;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -12,8 +15,12 @@ public class ClientTypeBean {
 	@Id
 	@Column(name="CLIENT_TYPE_ID", nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotNull(message = "clientTypeId is required.")
+	@Min(value=0,message="invalid clientTypeId")
 	private int clientTypeId;
 	@Column(name="CLIENT_TYPE", nullable=false)
+	@NotNull(message = "clientType is required.")
+	@Size(min=0,max=25,message="invalid clientType")
 	private String clientType;
 	
 	@OneToMany(mappedBy="clientType")

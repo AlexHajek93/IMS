@@ -3,6 +3,9 @@ package org.ims.beans;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -12,12 +15,18 @@ public class StateAbbrvBean {
 	@Id
 	@Column(name="ABBRV_ID",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotNull(message = "arrvId is required.")
+	@Min(value=0,message="Invalid id")
 	private int arrvId;
 	
 	@Column(name="STATE_NAME",nullable=false)
+	@NotNull(message = "stateName is required")
+	@Size(min=0,max=15,message="invalid size for stateName")
 	private String stateName;
 	
 	@Column(name="STATE_ABBRV",nullable=false)
+	@NotNull(message = "stateAbbrv is required")
+	@Size(min=2,max=2,message="stateAbbrv not of size 2!")
 	private String stateAbbrv;
 	
 	@OneToMany(mappedBy="stateAbbrv")
