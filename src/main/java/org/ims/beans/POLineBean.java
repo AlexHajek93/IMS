@@ -1,16 +1,23 @@
 package org.ims.beans;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="IMS_PO_LINE")
 public class POLineBean {
 	
 	@EmbeddedId		//composite key
+	@NotNull(message="Composite Key is required")
 	private POLineComposite compositeKey;
 	@Column(name="UNIT_PRICE", nullable=false)
+	@NotNull(message="Price is required")
+	@Min(value=0,message="Invalid Price")
 	private double unitPrice;
 	@Column(name="QUANTITY_ORDERED", nullable=false)
+	@NotNull(message="Quantity is required")
+	@Min(value=0,message="Invalid Quantity")
 	private int quantityOrdered;
 	
 	//mappings

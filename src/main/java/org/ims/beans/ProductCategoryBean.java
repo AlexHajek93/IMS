@@ -3,6 +3,9 @@ package org.ims.beans;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -12,8 +15,12 @@ public class ProductCategoryBean {
 	@Id
 	@Column(name="CATEGORY_ID",nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotNull(message="Id is required")
+	@Min(value=0,message="Invalid ID")
 	private int categoryId;
 	@Column(name="CATEGROY_DESCRIPTION",nullable=false)
+	@NotNull(message="Description is required")
+	@Size(max=50,message="Too Long")
 	private String categoryDescription;
 	
 	@ManyToMany
