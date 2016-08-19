@@ -26,7 +26,7 @@ public class ProductBean {
 	@Column(name="REORDER_QUANTITY",nullable=false)
 	private int reorderQuantity;
 	@Column(name="RETAIL_PRICE",nullable=false)
-	private int retailPrice;
+	private double retailPrice;
 	@Column(name="PRODUCT_WEIGHT")
 	private int productWeight;
 	@Column(name="PRODUCT_IMAGE")
@@ -83,10 +83,10 @@ public class ProductBean {
 	public void setReorderQuantity(int reorderQuantity) {
 		this.reorderQuantity = reorderQuantity;
 	}
-	public int getRetailPrice() {
+	public double getRetailPrice() {
 		return retailPrice;
 	}
-	public void setRetailPrice(int retailPrice) {
+	public void setRetailPrice(double retailPrice) {
 		this.retailPrice = retailPrice;
 	}
 	public int getProductWeight() {

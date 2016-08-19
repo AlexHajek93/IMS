@@ -1,5 +1,7 @@
 package org.ims.IMS_WEB;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.ims.beans.*;
@@ -66,4 +68,8 @@ public class IMSDAO {
   public boolean delete(Object obj){
   	return true;
   }
+  public List<StateAbbrvBean> getAllStatesAbb(){
+		Query query =session.createQuery("FROM StateAbbrvBean");
+		return query.list();
+	}
 }
