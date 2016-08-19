@@ -50,6 +50,12 @@ public class StateAbbrvBean {
 	public void setStateAbbrv(String stateAbbrv) {
 		this.stateAbbrv = stateAbbrv;
 	}
+	public Set<AddressBean> getStateAddressSet() {
+		return stateAddressSet;
+	}
+	public void setStateAddressSet(Set<AddressBean> stateAddressSet) {
+		this.stateAddressSet = stateAddressSet;
+	}
 	public StateAbbrvBean() {
 		super();
 		// TODO Auto-generated constructor stub

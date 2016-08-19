@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 public class POLineComposite implements Serializable{
 	
 	@Column(name = "ORDER_NUMBER_ID", nullable=false)
+<<<<<<< HEAD
 	@NotNull(message="Order Number is required")
 	private PurchaseOrderBean orderNumber;
 	@Column(name = "LINE_NUMBER_ID", nullable=false)
@@ -18,6 +19,12 @@ public class POLineComposite implements Serializable{
 	private int lineNumber;
 	
 	public PurchaseOrderBean getOrderNumber() {
+=======
+	private int orderNumber;
+	@Column(name = "LINE_NUMBER_ID", nullable=false)
+	private int lineNumber;
+	public int getOrderNumber() {
+>>>>>>> master
 		return orderNumber;
 	}
 	public void setOrderNumber(PurchaseOrderBean orderNumber) {
@@ -29,6 +36,4 @@ public class POLineComposite implements Serializable{
 	public void setLineNumber(int lineNumber) {
 		this.lineNumber = lineNumber;
 	}
-	
-	
 }

@@ -1,5 +1,6 @@
 package org.ims.beans;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -24,6 +25,7 @@ public class PurchaseOrderBean {
 	@Min(value=0,message="Invalid Price")
 	private int orderNum;
 	@Column(name="SUBTOTAL",nullable=false)
+<<<<<<< HEAD
 	@NotNull(message="Subtotal is required")
 	@Min(value=0,message="Invalid Price")
 	private String subtotal;
@@ -38,6 +40,15 @@ public class PurchaseOrderBean {
 	@NotNull(message="Total is required")
 	@Min(value=0,message="Invalid Price")
 	private int poTotal;
+=======
+	private double subtotal;
+	@Column(name="PURCHASE_DATE",nullable=false)
+	private Date purchaseDate;
+	@Column(name="TAX_AMOUNT",nullable=false)
+	private double taxAmount;
+	@Column(name="PO_TOTAL",nullable=false)
+	private double poTotal;
+>>>>>>> master
 	@ManyToOne
 	@JoinColumn(name="CLIENT_ID",nullable=false)
 	private ClientBean client;
@@ -50,28 +61,28 @@ public class PurchaseOrderBean {
 	public void setOrderNum(int orderNum) {
 		this.orderNum = orderNum;
 	}
-	public String getSubtotal() {
+	public double getSubtotal() {
 		return subtotal;
 	}
-	public void setSubtotal(String subtotal) {
+	public void setSubtotal(double subtotal) {
 		this.subtotal = subtotal;
 	}
-	public String getPurchaseDate() {
+	public Date getPurchaseDate() {
 		return purchaseDate;
 	}
-	public void setPurchaseDate(String purchaseDate) {
+	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
-	public String getTaxAmount() {
+	public double getTaxAmount() {
 		return taxAmount;
 	}
-	public void setTaxAmount(String taxAmount) {
+	public void setTaxAmount(double taxAmount) {
 		this.taxAmount = taxAmount;
 	}
-	public int getPoTotal() {
+	public double getPoTotal() {
 		return poTotal;
 	}
-	public void setPoTotal(int poTotal) {
+	public void setPoTotal(double poTotal) {
 		this.poTotal = poTotal;
 	}
 	public ClientBean getClient() {
@@ -89,7 +100,7 @@ public class PurchaseOrderBean {
 	public void setOrderLines(Set<POLineBean> orderLines) {
 		this.orderLines = orderLines;
 	}
-	public PurchaseOrderBean(int orderNum, String subtotal, String purchaseDate, String taxAmount, int poTotal,
+	public PurchaseOrderBean(int orderNum, double subtotal, Date purchaseDate, double taxAmount, double poTotal,
 			ClientBean client, Set<POLineBean> orderLines) {
 		super();
 		this.orderNum = orderNum;

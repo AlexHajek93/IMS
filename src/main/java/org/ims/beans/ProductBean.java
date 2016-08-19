@@ -43,9 +43,13 @@ public class ProductBean {
 	@Min(value=0,message="Invalid Quantity")
 	private int reorderQuantity;
 	@Column(name="RETAIL_PRICE",nullable=false)
+<<<<<<< HEAD
 	@NotNull(message="Price is required")
 	@Min(value=0,message="Invalid Price")
 	private int retailPrice;
+=======
+	private double retailPrice;
+>>>>>>> master
 	@Column(name="PRODUCT_WEIGHT")
 	@Min(value=0,message="Invalid Weight")
 	private int productWeight;
@@ -103,10 +107,10 @@ public class ProductBean {
 	public void setReorderQuantity(int reorderQuantity) {
 		this.reorderQuantity = reorderQuantity;
 	}
-	public int getRetailPrice() {
+	public double getRetailPrice() {
 		return retailPrice;
 	}
-	public void setRetailPrice(int retailPrice) {
+	public void setRetailPrice(double retailPrice) {
 		this.retailPrice = retailPrice;
 	}
 	public int getProductWeight() {
