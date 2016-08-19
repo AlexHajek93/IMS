@@ -2,7 +2,8 @@ package org.ims.beans;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -18,6 +19,7 @@ public class POLineComposite implements Serializable{
 	private int lineNumber;
 	
 	public PurchaseOrderBean getOrderNumber() {
+
 		return orderNumber;
 	}
 	public void setOrderNumber(PurchaseOrderBean orderNumber) {
@@ -29,6 +31,4 @@ public class POLineComposite implements Serializable{
 	public void setLineNumber(int lineNumber) {
 		this.lineNumber = lineNumber;
 	}
-	
-	
 }
